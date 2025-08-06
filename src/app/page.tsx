@@ -1,103 +1,145 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useEffect, useState } from 'react';
+import { PropertyCard } from '@/components/PropertyCard';
+import { getProperties } from '@/lib/data';
+import { Property } from '@/types';
+import { Building, Home, DollarSign, TrendingUp } from 'lucide-react';
+
+export default function HomePage() {
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    loadProperties();
+  }, []);
+
+  const loadProperties = async () => {
+    try {
+      const data = await getProperties();
+      setProperties(data);
+    } catch (error) {
+      console.error('Error loading properties:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
+  const totalProperties = properties.length;
+  const averagePrice = properties.reduce((sum, p) => sum + p.price, 0) / totalProperties;
+  const totalRevenue = properties.reduce((sum, p) => sum + p.price, 0);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes in stantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Header */}
+      <header className="bg-white shadow-lg border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center h-20">
+            <div className="flex items-center space-x-3">
+              <div className="p-2 bg-blue-600 rounded-xl shadow-md">
+                <Home className="h-8 w-8 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">Home Rentals</h1>
+                <p className="text-sm text-gray-500">Dashboard Administrativo</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </header>
+      
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Page Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Dashboard Principal</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Gestiona y visualiza todas tus propiedades de alquiler en un solo lugar
+          </p>
+        </div>
+
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center">
+              <div className="p-4 bg-blue-100 rounded-2xl">
+                <Building className="h-8 w-8 text-blue-600" />
+              </div>
+              <div className="ml-6">
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">Total Propiedades</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">{totalProperties}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center">
+              <div className="p-4 bg-green-100 rounded-2xl">
+                <DollarSign className="h-8 w-8 text-green-600" />
+              </div>
+              <div className="ml-6">
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">Precio Promedio</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">
+                  ${Math.round(averagePrice).toLocaleString()}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center">
+              <div className="p-4 bg-purple-100 rounded-2xl">
+                <TrendingUp className="h-8 w-8 text-purple-600" />
+              </div>
+              <div className="ml-6">
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">Ingresos Totales</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">
+                  ${totalRevenue.toLocaleString()}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center">
+              <div className="p-4 bg-orange-100 rounded-2xl">
+                <Home className="h-8 w-8 text-orange-600" />
+              </div>
+              <div className="ml-6">
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">Ocupación</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">85%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     {/* Propiedades en scroll horizontal */}
+<div className="mb-10">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl font-bold text-gray-900 mb-4">Propiedades Disponibles</h2>
+    <p className="text-lg text-gray-600">
+      Explora nuestro portafolio de {totalProperties} propiedades premium
+    </p>
+  </div>
+
+  <div className="overflow-x-auto pb-4">
+    <div className="flex space-x-6 min-w-max px-2">
+      {properties.map((property) => (
+        <div key={property.id} className="w-[320px] shrink-0">
+          <PropertyCard property={property} />
+        </div>
+      ))}
     </div>
-  );
+  </div>
+</div>
+        </main>
+      </div>
+   );
 }
