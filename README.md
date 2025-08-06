@@ -2,9 +2,13 @@
 
 A modern property rental dashboard built with Next.js, React, TypeScript, and Tailwind CSS.
 
+## Live Demo
+
+🌐 **Live Application:** [https://admin-dashboard-git-main-segras-projects.vercel.app](https://admin-dashboard-git-main-segras-projects.vercel.app)
+
 ## Demo Credentials
 
-- **Email:** admin@miamirealty.com
+- **Email:** admin@ocean.com
 - **Password:** 123456
 
 ## Features

@@ -189,7 +189,7 @@ export const mockProperties: Property[] = [
 
 // Simple hardcoded authentication
 const HARDCODED_USER = {
-  email: "admin@miamirealty.com",
+  email: "admin@ocean.com",
   password: "123456",
   name: "Michael Rodriguez",
 };

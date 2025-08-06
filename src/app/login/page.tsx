@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { login } from '@/lib/data';
-import { Home, AlertCircle } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
