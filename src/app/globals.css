@@ -107,24 +107,23 @@ body {
 .scroll-item {
   scroll-snap-align: start;
   flex-shrink: 0;
-}/* 🎨 Scrollbar minimalista para el carrusel y toda la web */
+}
 ::-webkit-scrollbar {
   height: 8px;            /* altura de la barra (horizontal) */
   width: 8px;             /* ancho si fuera vertical */
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* fondo del track */
+  background: transparent; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.4);  /* azul semi-transparente */
-  border-radius: 9999px;                 /* redondeado */
-  transition: background 0.3s;
+  background: rgba(59, 130, 246, 0.4);  
+  border-radius: 9999px;                 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.7);  /* azul más intenso al hover */
+  background: rgba(59, 130, 246, 0.7);  
 }
 
 /* Para Firefox */

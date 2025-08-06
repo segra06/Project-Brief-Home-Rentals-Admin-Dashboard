@@ -103,30 +103,30 @@ export default function PropertyDetailsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-
-<div className="flex justify-center">
-  <div className="relative w-[500px] h-[300px] rounded-2xl overflow-hidden shadow-2xl">
-    <Image
-      src={property.image}
-      alt={property.name}
-      width={500}
-      height={300}
-      className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
-    />
-    {/* Badge de precio */}
-    <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 rounded-full shadow-lg text-sm">
-      <span className="font-bold">${property.price.toLocaleString()}</span>
-      <span className="text-xs opacity-80 ml-1">/month</span>
-    </div>
-    {/* Badge de rating */}
-    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full shadow-md text-xs">
-      <div className="flex items-center space-x-1">
-        <Star className="h-4 w-4 text-yellow-400 fill-current" />
-        <span className="font-semibold text-gray-800">4.8</span>
-      </div>
-    </div>
-  </div>
-</div>
+            {/* Property Image */}
+            <div className="flex justify-center">
+              <div className="relative w-[500px] h-[300px] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src={property.image}
+                  alt={property.name}
+                  width={500}
+                  height={300}
+                  className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+                />
+                {/* Badge de precio */}
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 rounded-full shadow-lg text-sm">
+                  <span className="font-bold">${property.price.toLocaleString()}</span>
+                  <span className="text-xs opacity-80 ml-1">/month</span>
+                </div>
+                {/* Badge de rating */}
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full shadow-md text-xs">
+                  <div className="flex items-center space-x-1">
+                    <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                    <span className="font-semibold text-gray-800">4.8</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* Property Details */}
             <div className="bg-white rounded-3xl shadow-xl p-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">{property.name}</h1>
@@ -222,20 +222,21 @@ export default function PropertyDetailsPage() {
             {/* Contact Card */}
             <div className="bg-white rounded-3xl shadow-xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Contact Information</h3>
-                          
+              
               {/* Agent Info */}
               <div className="mb-6 p-4 bg-gray-50 rounded-xl">
                 <div className="flex items-center mb-3">
                   <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    MR
                   </div>
                   <div className="ml-3">
                     <h4 className="font-semibold text-gray-900">Michael Rodriguez</h4>
                   </div>
                 </div>
                 <div className="space-y-2 text-sm text-gray-600">
-                  <p>  michael.rodriguez@miamirealty.com</p>
-                  <p> +1 (305) 555-0123</p>
-                  <p> Miami Premium Realty</p>
+                  <p>📧 michael.rodriguez@miamirealty.com</p>
+                  <p>📞 +1 (305) 555-0123</p>
+                  <p>🏢 Miami Premium Realty</p>
                 </div>
               </div>
             </div>
