@@ -187,6 +187,51 @@ export const mockProperties: Property[] = [
   },
 ];
 
+// Simple hardcoded authentication
+const HARDCODED_USER = {
+  email: "admin@miamirealty.com",
+  password: "123456",
+  name: "Michael Rodriguez",
+};
+
+export const login = async (
+  email: string,
+  password: string
+): Promise<{
+  success: boolean;
+  user?: { email: string; name: string };
+  error?: string;
+}> => {
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  if (email === HARDCODED_USER.email && password === HARDCODED_USER.password) {
+    return {
+      success: true,
+      user: {
+        email: HARDCODED_USER.email,
+        name: HARDCODED_USER.name,
+      },
+    };
+  }
+
+  return {
+    success: false,
+    error: "Invalid email or password",
+  };
+};
+
+export const logout = () => {
+  localStorage.removeItem("user");
+};
+
+export const getCurrentUser = () => {
+  if (typeof window !== "undefined") {
+    const user = localStorage.getItem("user");
+    return user ? JSON.parse(user) : null;
+  }
+  return null;
+};
+
 // Función para simular fetch de datos
 export const getProperties = async (): Promise<Property[]> => {
   // Simular delay de API

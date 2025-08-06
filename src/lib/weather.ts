@@ -36,12 +36,11 @@ export const getWeatherData = async (
     temperature: Math.round(data.main.temp),
     description: data.weather[0].description,
     humidity: data.main.humidity,
-    windSpeed: Math.round(data.wind.speed * 3.6), // Convert m/s to km/h
+    windSpeed: Math.round(data.wind.speed * 3.6),
     icon: data.weather[0].icon,
   };
 };
 
-// Helper function to get weather icon URL
 export const getWeatherIconUrl = (icon: string): string => {
   return `https://openweathermap.org/img/wn/${icon}@2x.png`;
 };
