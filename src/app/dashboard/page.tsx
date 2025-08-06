@@ -1,30 +1,30 @@
 'use client';
 
-import { useAuth } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { PropertyCard } from '@/components/PropertyCard';
-import { getProperties } from '@/lib/data';
+import { getProperties, getCurrentUser } from '@/lib/data';
 import { Property } from '@/types';
 import { Building, Home, DollarSign, TrendingUp } from 'lucide-react';
 
 export default function DashboardPage() {
-  const { user, isLoading: authLoading } = useAuth();
   const router = useRouter();
   const [properties, setProperties] = useState<Property[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState<{name: string; email: string} | null>(null);
 
   useEffect(() => {
-    if (!authLoading && !user) {
+    const currentUser = getCurrentUser();
+    
+    if (!currentUser) {
       router.push('/login');
       return;
     }
 
-    if (user) {
-      loadProperties();
-    }
-  }, [user, authLoading, router]);
+    setUser(currentUser);
+    loadProperties();
+  }, [router]);
 
   const loadProperties = async () => {
     try {
@@ -37,7 +37,7 @@ export default function DashboardPage() {
     }
   };
 
-  if (authLoading || isLoading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>

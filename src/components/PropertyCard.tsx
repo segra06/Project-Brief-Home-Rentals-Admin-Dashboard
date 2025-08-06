@@ -2,6 +2,7 @@ import { Property } from '@/types';
 import { MapPin, Bed, Bath, Square, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from './Button';
 
 interface PropertyCardProps {
   property: Property;
@@ -75,9 +76,13 @@ export function PropertyCard({ property }: PropertyCardProps) {
         {/* Action Button */}
         <div className="pt-5">
           <Link href={`/property/${property.id}`}>
-            <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+            <Button 
+              variant="subtle" 
+              size="md" 
+              className="w-full"
+            >
               View Details
-            </button>
+            </Button>
           </Link>
         </div>
       </div>

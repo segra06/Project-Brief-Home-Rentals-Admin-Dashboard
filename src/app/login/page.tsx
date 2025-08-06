@@ -39,10 +39,10 @@ export default function LoginPage() {
           <div className="flex justify-center">
             <Home className="h-12 w-12 text-blue-600" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">
+          <h2 className="mt-6 text-3xl font-montserrat font-bold text-gray-900">
             Miami Rentals Dashboard
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm font-poppins text-gray-600">
             Sign in to your account
           </p>
         </div>
