@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **Home Rentals Admin Dashboard**
 
-## Getting Started
+Un dashboard de administración para gestión de propiedades de alquiler construido con Next.js, React y Tailwind CSS.
 
-First, run the development server:
+## **🌐 Demo en Vivo**
+
+[http://localhost:3000](http://localhost:3000) (ejecutar localmente)
+_URL de producción se agregará después del deploy_
+
+## **🔐 Credenciales de Acceso**
+
+- **Email:** admin@homerentals.com
+- **Password:** admin123
+
+## **✨ Características**
+
+- 🔐 **Autenticación básica** - Sistema de login simple
+- 🏠 **Lista de propiedades** - Vista de todas las propiedades de alquiler
+- 📍 **Detalles de propiedades** - Información completa de cada propiedad
+- 🌤️ **Clima en tiempo real** - Integración con API de clima para cada ubicación
+- 📱 **Diseño responsivo** - Funciona en dispositivos móviles y desktop
+
+## **🚀 Tecnologías Utilizadas**
+
+- **Framework:** Next.js 15 con App Router
+- **Frontend:** React 19 + TypeScript
+- **Estilos:** Tailwind CSS
+- **API Externa:** OpenWeatherMap para datos climáticos
+- **Deployment:** Vercel
+
+## **📦 Instalación y Configuración**
+
+1. **Clonar el repositorio:**
+
+```bash
+git clone [URL-del-repositorio]
+cd home-rentals-dashboard
+```
+
+2. **Instalar dependencias:**
+
+```bash
+npm install
+```
+
+3. **Configurar variables de entorno:**
+   Crear un archivo `.env.local` en la raíz del proyecto:
+
+```bash
+NEXT_PUBLIC_WEATHER_API_KEY=tu_api_key_de_openweathermap
+```
+
+4. **Ejecutar el servidor de desarrollo:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. **Abrir en el navegador:**
+   Visita [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## **🏗️ Estructura del Proyecto**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── login/           # Página de autenticación
+│   ├── dashboard/       # Dashboard principal
+│   ├── properties/      # Lista de propiedades
+│   └── property/[id]/   # Detalles de propiedad individual
+├── components/          # Componentes reutilizables
+├── lib/                # Utilidades y configuración
+└── types/              # Definiciones de TypeScript
+```
 
-## Learn More
+## **🎯 Funcionalidades Implementadas**
 
-To learn more about Next.js, take a look at the following resources:
+### **1. Autenticación**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Formulario de login básico
+- Validación de credenciales
+- Redirección automática después del login
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **2. Dashboard de Propiedades**
 
-## Deploy on Vercel
+- Lista completa de propiedades disponibles
+- Tarjetas con información básica (nombre, dirección, precio)
+- Navegación a detalles de cada propiedad
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **3. Detalles de Propiedad**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Información completa de la propiedad
+- Imagen en tamaño completo
+- Descripción detallada
+- **Datos climáticos en tiempo real** para la ubicación
+
+### **4. Integración de API de Clima**
+
+- Conexión con OpenWeatherMap API
+- Muestra temperatura actual, condiciones y humedad
+- Actualización automática de datos climáticos
+
+## **🚀 Scripts Disponibles**
+
+```bash
+npm run dev      # Servidor de desarrollo
+npm run build    # Construir para producción
+npm run start    # Servidor de producción
+npm run lint     # Ejecutar linter
+```
+
+## **📝 Notas de Desarrollo**
+
+- **Tiempo límite:** Proyecto desarrollado en máximo 5 horas
+- **Priorización:** Se enfocó en funcionalidad core sobre características avanzadas
+- **Escalabilidad:** Estructura preparada para futuras mejoras
+
+## **🔮 Mejoras Futuras**
+
+- [ ] Autenticación con JWT/backend real
+- [ ] CRUD completo de propiedades
+- [ ] Filtros y búsqueda avanzada
+- [ ] Dashboard con métricas y gráficos
+- [ ] Gestión de reservas
+- [ ] Notificaciones en tiempo real
