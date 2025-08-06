@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AuthGuard from "@/components/AuthGuard";
 
 export const metadata: Metadata = {
-  title: "Home Rentals Dashboard",
-  description: "Dashboard administrativo para gestión de propiedades de alquiler",
+  title: "Miami Rentals Dashboard",
+  description: "Administrative dashboard for rental property management",
 };
 
 export default function RootLayout({
@@ -12,9 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className="antialiased bg-gray-50 min-h-screen">
-        {children}
+        <AuthGuard>
+          {children}
+        </AuthGuard>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { PropertyCard } from '@/components/PropertyCard';
+import { Navbar } from '@/components/Navbar';
 import { getProperties } from '@/lib/data';
 import { Property } from '@/types';
 import { Building, Home, DollarSign, TrendingUp } from 'lucide-react';
@@ -38,27 +39,13 @@ export default function HomePage() {
   const totalRevenue = properties.reduce((sum, p) => sum + p.price, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 sm:px-6 lg:px-8">
-      {/* Header */}
-      <header className="bg-white shadow-lg border-b border-gray-200 mx-4 sm:mx-6 lg:mx-8 rounded-b-2xl">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center h-20">
-            <div className="flex items-center space-x-3">
-              <div className="p-2 bg-blue-600 rounded-xl shadow-md">
-                              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Home Rentals</h1>
-                <h2 className="text-sm text-gray-500">Administrative Dashboard</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <Navbar />
       
-      <main className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 mt-6">
+      <main className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Main Dashboard</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Miami Rentals Dashboard</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Manage and visualize all your rental properties in one place
           </p>
@@ -129,8 +116,7 @@ export default function HomePage() {
           </div>
         </div>
 
-</main>
+      </main>
     </div>
-  
    );
 }
