@@ -7,6 +7,7 @@ import { getWeatherData } from '@/lib/weather';
 import { Property } from '@/types';
 import { ArrowLeft, MapPin, Bed, Bath, Square, Star, Cloud, Thermometer } from 'lucide-react';
 import Image from 'next/image';
+import { Button } from '@/components/Button';
 
 interface WeatherData {
   temperature: number;
@@ -68,12 +69,12 @@ export default function PropertyDetailsPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Property Not Found</h1>
-          <button
+          <Button
+            variant="primary"
             onClick={() => router.push('/')}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
           >
             Back to Dashboard
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -85,13 +86,15 @@ export default function PropertyDetailsPage() {
       <header className="bg-white shadow-lg border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-20">
-            <button
+            <Button
+              variant="outline"
+              size="sm"
               onClick={() => router.push('/')}
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
+              className="flex items-center space-x-2"
             >
-              <ArrowLeft className="h-5 w-5" />
+              <ArrowLeft className="h-4 w-4" />
               <span>Back to Dashboard</span>
-            </button>
+            </Button>
           </div>
         </div>
       </header>
