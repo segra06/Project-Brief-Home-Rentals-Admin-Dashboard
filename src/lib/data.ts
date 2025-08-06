@@ -8,8 +8,7 @@ export const mockProperties: Property[] = [
     description:
       "Espectacular penthouse en el corazón financiero de Miami con vistas panorámicas a la bahía y al skyline. Ubicado en torre de lujo con amenidades de clase mundial.",
     price: 8500,
-    image:
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=1",
     coordinates: {
       lat: 25.7617,
       lon: -80.1918,
@@ -32,8 +31,7 @@ export const mockProperties: Property[] = [
     description:
       "Exclusivo condominio frente al océano en el icónico South Beach. Disfruta de playas de arena blanca, vida nocturna vibrante y el famoso Art Deco District.",
     price: 12000,
-    image:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=2",
     coordinates: {
       lat: 25.781,
       lon: -80.13,
@@ -56,8 +54,7 @@ export const mockProperties: Property[] = [
     description:
       "Loft industrial moderno en el vibrante distrito artístico de Wynwood. Rodeado de murales coloridos, galerías de arte, cervecerías artesanales y restaurantes trendy.",
     price: 4200,
-    image:
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=3",
     coordinates: {
       lat: 25.801,
       lon: -80.199,
@@ -80,8 +77,7 @@ export const mockProperties: Property[] = [
     description:
       "Elegante apartamento en edificio Art Deco restaurado en Mid-Beach. Combina el encanto histórico de Miami Beach con comodidades modernas y acceso a playas tranquilas.",
     price: 6800,
-    image:
-      "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=4",
     coordinates: {
       lat: 25.8209,
       lon: -80.1225,
@@ -104,8 +100,7 @@ export const mockProperties: Property[] = [
     description:
       "Majestuosa mansión frente al agua en la exclusiva isla de Key Biscayne. Privacidad total con muelle privado, perfecta para yates y actividades acuáticas de lujo.",
     price: 25000,
-    image:
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=5",
     coordinates: {
       lat: 25.6906,
       lon: -80.1633,
@@ -128,8 +123,7 @@ export const mockProperties: Property[] = [
     description:
       "Villa de lujo a pasos de las exclusivas playas de Bal Harbour. Cerca de Bal Harbour Shops, uno de los centros comerciales más elegantes del mundo.",
     price: 18000,
-    image:
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=6",
     coordinates: {
       lat: 25.8906,
       lon: -80.1225,
@@ -152,8 +146,7 @@ export const mockProperties: Property[] = [
     description:
       "Moderno condominio en rascacielos del centro de Miami. Perfecto para profesionales con fácil acceso a distrito financiero, transporte público y vida urbana.",
     price: 5500,
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=7",
     coordinates: {
       lat: 25.7743,
       lon: -80.1937,
@@ -176,8 +169,7 @@ export const mockProperties: Property[] = [
     description:
       "Elegante propiedad en el prestigioso Coral Gables, conocido como 'The City Beautiful'. Arquitectura mediterránea rodeada de vegetación tropical y canales navegables.",
     price: 9200,
-    image:
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/800/600?random=8",
     coordinates: {
       lat: 25.7211,
       lon: -80.2683,
