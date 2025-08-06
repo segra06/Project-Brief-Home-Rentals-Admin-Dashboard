@@ -3,10 +3,10 @@ import { Property } from "@/types";
 export const mockProperties: Property[] = [
   {
     id: "1",
-    name: "Luxury Penthouse en Brickell",
+    name: "Luxury Penthouse in Brickell",
     address: "Brickell Avenue, Miami, FL",
     description:
-      "Espectacular penthouse en el corazón financiero de Miami con vistas panorámicas a la bahía y al skyline. Ubicado en torre de lujo con amenidades de clase mundial.",
+      "Spectacular penthouse in the heart of Miami's financial district with panoramic views of the bay and skyline. Located in a luxury tower with world-class amenities.",
     price: 8500,
     image: "https://picsum.photos/800/600?random=1",
     coordinates: {
@@ -14,11 +14,11 @@ export const mockProperties: Property[] = [
       lon: -80.1918,
     },
     amenities: [
-      "Vista a la Bahía",
+      "Bay View",
       "Valet Parking",
-      "Aire Acondicionado Central",
+      "Central Air Conditioning",
       "Infinity Pool",
-      "Concierge 24/7",
+      "24/7 Concierge",
     ],
     bedrooms: 3,
     bathrooms: 3,
@@ -26,10 +26,10 @@ export const mockProperties: Property[] = [
   },
   {
     id: "2",
-    name: "Oceanfront Condo en South Beach",
+    name: "Oceanfront Condo in South Beach",
     address: "Ocean Drive, South Beach, Miami Beach, FL",
     description:
-      "Exclusivo condominio frente al océano en el icónico South Beach. Disfruta de playas de arena blanca, vida nocturna vibrante y el famoso Art Deco District.",
+      "Exclusive oceanfront condominium in iconic South Beach. Enjoy white sand beaches, vibrant nightlife and the famous Art Deco District.",
     price: 12000,
     image: "https://picsum.photos/800/600?random=2",
     coordinates: {
@@ -37,11 +37,11 @@ export const mockProperties: Property[] = [
       lon: -80.13,
     },
     amenities: [
-      "Vista al Océano",
-      "Balcón Privado",
+      "Ocean View",
+      "Private Balcony",
       "Beach Club",
       "Spa",
-      "Acceso Directo a Playa",
+      "Direct Beach Access",
     ],
     bedrooms: 2,
     bathrooms: 2,
@@ -49,10 +49,10 @@ export const mockProperties: Property[] = [
   },
   {
     id: "3",
-    name: "Modern Loft en Wynwood",
+    name: "Modern Loft in Wynwood",
     address: "Wynwood Arts District, Miami, FL",
     description:
-      "Loft industrial moderno en el vibrante distrito artístico de Wynwood. Rodeado de murales coloridos, galerías de arte, cervecerías artesanales y restaurantes trendy.",
+      "Modern industrial loft in the vibrant Wynwood arts district. Surrounded by colorful murals, art galleries, craft breweries and trendy restaurants.",
     price: 4200,
     image: "https://picsum.photos/800/600?random=3",
     coordinates: {
@@ -60,9 +60,9 @@ export const mockProperties: Property[] = [
       lon: -80.199,
     },
     amenities: [
-      "Techos Altos",
-      "Cocina Gourmet",
-      "Fibra Óptica",
+      "High Ceilings",
+      "Gourmet Kitchen",
+      "Fiber Optic Internet",
       "Pet Friendly",
       "Rooftop Terrace",
     ],
@@ -72,10 +72,10 @@ export const mockProperties: Property[] = [
   },
   {
     id: "4",
-    name: "Art Deco Apartment en Mid-Beach",
+    name: "Art Deco Apartment in Mid-Beach",
     address: "Collins Avenue, Mid-Beach, Miami Beach, FL",
     description:
-      "Elegante apartamento en edificio Art Deco restaurado en Mid-Beach. Combina el encanto histórico de Miami Beach con comodidades modernas y acceso a playas tranquilas.",
+      "Elegant apartment in a restored Art Deco building in Mid-Beach. Combines the historic charm of Miami Beach with modern amenities and access to quiet beaches.",
     price: 6800,
     image: "https://picsum.photos/800/600?random=4",
     coordinates: {
@@ -83,10 +83,10 @@ export const mockProperties: Property[] = [
       lon: -80.1225,
     },
     amenities: [
-      "Arquitectura Art Deco",
-      "Balcón con Vista",
+      "Art Deco Architecture",
+      "Balcony with View",
       "Pool Deck",
-      "Gym Privado",
+      "Private Gym",
       "Garden Courtyard",
     ],
     bedrooms: 1,
@@ -95,10 +95,10 @@ export const mockProperties: Property[] = [
   },
   {
     id: "5",
-    name: "Waterfront Mansion en Key Biscayne",
+    name: "Waterfront Mansion in Key Biscayne",
     address: "Key Biscayne, Miami, FL",
     description:
-      "Majestuosa mansión frente al agua en la exclusiva isla de Key Biscayne. Privacidad total con muelle privado, perfecta para yates y actividades acuáticas de lujo.",
+      "Majestic waterfront mansion on the exclusive island of Key Biscayne. Total privacy with private dock, perfect for yachts and luxury water activities.",
     price: 25000,
     image: "https://picsum.photos/800/600?random=5",
     coordinates: {
@@ -106,11 +106,11 @@ export const mockProperties: Property[] = [
       lon: -80.1633,
     },
     amenities: [
-      "Muelle Privado",
-      "Piscina Infinity",
-      "Vista Panorámica",
-      "Casa de Huéspedes",
-      "Seguridad Privada",
+      "Private Dock",
+      "Infinity Pool",
+      "Panoramic View",
+      "Guest House",
+      "Private Security",
     ],
     bedrooms: 6,
     bathrooms: 7,
@@ -118,10 +118,10 @@ export const mockProperties: Property[] = [
   },
   {
     id: "6",
-    name: "Beachside Villa en Bal Harbour",
+    name: "Beachside Villa in Bal Harbour",
     address: "Bal Harbour, Miami Beach, FL",
     description:
-      "Villa de lujo a pasos de las exclusivas playas de Bal Harbour. Cerca de Bal Harbour Shops, uno de los centros comerciales más elegantes del mundo.",
+      "Luxury villa steps away from the exclusive beaches of Bal Harbour. Close to Bal Harbour Shops, one of the most elegant shopping centers in the world.",
     price: 18000,
     image: "https://picsum.photos/800/600?random=6",
     coordinates: {
@@ -129,7 +129,7 @@ export const mockProperties: Property[] = [
       lon: -80.1225,
     },
     amenities: [
-      "Acceso Privado a Playa",
+      "Private Beach Access",
       "Cabana",
       "Pool & Spa",
       "Wine Cellar",
@@ -141,10 +141,10 @@ export const mockProperties: Property[] = [
   },
   {
     id: "7",
-    name: "High-Rise Condo en Downtown Miami",
+    name: "High-Rise Condo in Downtown Miami",
     address: "Flagler Street, Downtown Miami, FL",
     description:
-      "Moderno condominio en rascacielos del centro de Miami. Perfecto para profesionales con fácil acceso a distrito financiero, transporte público y vida urbana.",
+      "Modern condominium in a downtown Miami skyscraper. Perfect for professionals with easy access to financial district, public transportation and urban life.",
     price: 5500,
     image: "https://picsum.photos/800/600?random=7",
     coordinates: {
@@ -152,9 +152,9 @@ export const mockProperties: Property[] = [
       lon: -80.1937,
     },
     amenities: [
-      "Vista del Skyline",
+      "Skyline View",
       "Parking Garage",
-      "Security 24/7",
+      "24/7 Security",
       "Business Center",
       "Metro Access",
     ],
@@ -164,10 +164,10 @@ export const mockProperties: Property[] = [
   },
   {
     id: "8",
-    name: "Tropical Estate en Coral Gables",
+    name: "Tropical Estate in Coral Gables",
     address: "Coral Gables, Miami, FL",
     description:
-      "Elegante propiedad en el prestigioso Coral Gables, conocido como 'The City Beautiful'. Arquitectura mediterránea rodeada de vegetación tropical y canales navegables.",
+      "Elegant property in prestigious Coral Gables, known as 'The City Beautiful'. Mediterranean architecture surrounded by tropical vegetation and navigable canals.",
     price: 9200,
     image: "https://picsum.photos/800/600?random=8",
     coordinates: {
@@ -175,8 +175,8 @@ export const mockProperties: Property[] = [
       lon: -80.2683,
     },
     amenities: [
-      "Arquitectura Mediterránea",
-      "Jardín Tropical",
+      "Mediterranean Architecture",
+      "Tropical Garden",
       "Canal Access",
       "Historic District",
       "Golf Course Nearby",

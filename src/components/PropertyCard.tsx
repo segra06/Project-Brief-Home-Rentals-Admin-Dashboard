@@ -1,6 +1,7 @@
 import { Property } from '@/types';
 import { MapPin, Bed, Bath, Square, Star } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface PropertyCardProps {
   property: Property;
@@ -53,11 +54,6 @@ export function PropertyCard({ property }: PropertyCardProps) {
           </div>
         </div>
         
-        {/* Description */}
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
-          {property.description}
-        </p>
-        
         {/* Property Features */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-200">
           <div className="flex items-center space-x-4">
@@ -78,9 +74,11 @@ export function PropertyCard({ property }: PropertyCardProps) {
 
         {/* Action Button */}
         <div className="pt-5">
-          <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl">
-            View Details
-          </button>
+          <Link href={`/property/${property.id}`}>
+            <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
