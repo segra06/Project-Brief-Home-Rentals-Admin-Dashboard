@@ -8,7 +8,7 @@ A modern property rental dashboard built with Next.js, React, TypeScript, and Ta
 
 ## Demo Credentials
 
-- **Email:** admin@miamirealty.com
+- **Email:** admin@ocean.com
 - **Password:** 123456
 
 ## Features
